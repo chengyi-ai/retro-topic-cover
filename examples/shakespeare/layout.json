@@ -1,0 +1,11 @@
+{
+  "shadow_color": "#811b20",
+  "cutouts": [
+    {
+      "path": "person.png",
+      "width": 0.34,
+      "x": 0.37,
+      "y": 0.73
+    }
+  ]
+}

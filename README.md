@@ -9,6 +9,28 @@
 - 前景交叠、高低错落、暗红柔影，人物与阴影裁切在边框内。
 - 附完整示例、字体及素材许可；无需 API Key。
 
+## 更多示例
+
+| 达尔文 · 青绿色拼贴 | 莎士比亚 · 金色拼贴 |
+| --- | --- |
+| ![达尔文](examples/darwin/cover.jpg) | ![莎士比亚](examples/shakespeare/cover.jpg) |
+| [素材来源](examples/darwin/SOURCES.md) | [素材来源](examples/shakespeare/SOURCES.md) |
+
+| 拿破仑 · 加冕人物拼贴 | 梵高 · 纯主图排版 |
+| --- | --- |
+| ![拿破仑](examples/napoleon/cover.jpg) | ![梵高](examples/vangogh/cover.jpg) |
+| [素材来源](examples/napoleon/SOURCES.md) | [素材来源](examples/vangogh/SOURCES.md) |
+
+五个示例均附背景、所用透明前景、排版参数与许可说明。安装依赖后可一键重新渲染：
+
+```bash
+python scripts/render_examples.py
+# 或仅渲染指定示例
+python scripts/render_examples.py darwin napoleon
+```
+
+`recipe.json` 控制标题、颜色和标题位置；`layout.json` 控制前景拼贴。
+
 ## 安装为 Codex Skill
 
 需要 Python 3.10+、Git。在尚未安装同名技能时执行：
@@ -56,4 +78,4 @@ python scripts/extract_cutout.py --input portrait.jpg \
 
 ## 许可
 
-代码与技能说明采用 [MIT](LICENSE)。字体 Noto Serif SC Black 采用 [SIL OFL](assets/OFL.txt)。示例使用公有领域绘画，来源与许可见 [SOURCES.md](examples/beethoven/SOURCES.md)。第三方素材不因本仓库的代码许可而改变原有权利；请自行核验新增素材的使用权限。
+代码与技能说明采用 [MIT](LICENSE)。字体 Noto Serif SC Black 采用 [SIL OFL](assets/OFL.txt)。示例使用公有领域绘画，来源与许可见 [SOURCES.md](examples/beethoven/SOURCES.md) 及各示例目录的 SOURCES.md。第三方素材不因本仓库的代码许可而改变原有权利；请自行核验新增素材的使用权限。
