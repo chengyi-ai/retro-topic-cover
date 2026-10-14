@@ -29,11 +29,11 @@ if [ -n "$forbidden" ]; then
   exit 1
 fi
 
+# 每条检查单独记结果：放在 { …; } || 里时 set -e 不生效，只会看最后一条命令。
 tests_ok=true
-{
-  python tools/validate_repo.py
-  python -m unittest discover -s tests
-} > .agent-out/test.log 2>&1 || tests_ok=false
+: > .agent-out/test.log
+python tools/validate_repo.py >> .agent-out/test.log 2>&1 || tests_ok=false
+python -m unittest discover -s tests >> .agent-out/test.log 2>&1 || tests_ok=false
 
 title="$(head -n 1 "$title_file" 2>/dev/null || true)"
 [ -n "$title" ] || title="$(gh issue view "$issue" --json title --jq '"fix: " + .title')"
