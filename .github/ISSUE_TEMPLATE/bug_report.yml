@@ -1,0 +1,38 @@
+name: 问题反馈 / Bug report
+description: 成图不对、抠图边缘异常、命令报错或安装失败
+labels: ["needs-triage", "source:github", "type:bug"]
+body:
+  - type: markdown
+    attributes:
+      value: 提交后 Agent 会自动评估可行性并回复。请尽量提供可复现的信息，渲染问题附上成图截图。只贴你有权分享的图片。
+  - type: textarea
+    id: what
+    attributes:
+      label: 发生了什么
+      description: 实际看到的现象（标题出界或压脸、人物或阴影越过外框、抠图边缘残留、透明 PNG 被拒、命令报错……），附截图或报错原文。
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望结果
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      description: 用到的命令和参数（`render_cover.py` / `extract_cutout.py` / `render_examples.py`），用了拼贴的请贴出 layout JSON；能用仓库自带示例复现最好。
+      placeholder: python scripts/render_cover.py --main examples/beethoven/background.jpg --line1 '贝多芬：' --line2 '失聪后如何作曲' --collage examples/beethoven/layout.json --output out/test.jpg
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: 版本
+      description: 安装目录里 `git rev-parse --short HEAD` 的输出
+  - type: input
+    id: env
+    attributes:
+      label: 运行环境
+      description: 系统（macOS / Linux / Windows）、Python 版本、Pillow / OpenCV 版本、所用 Agent（Codex / Claude Code / 直接运行脚本）
