@@ -73,6 +73,12 @@ python scripts/extract_cutout.py --input portrait.jpg \
 
 `polygon.json` 为原图像素坐标数组，如 `[[120,30],[330,50],[390,580],[80,580]]`。沿人物轮廓标点，再由 GrabCut 细化边缘；`--band` 控制轮廓附近待细化范围。此工具需要人工提供轮廓，不是自动识别人像；复杂头发、相近背景色可能需要重新标点。源图和最终透明边缘都应目视检查。
 
+## 反馈
+
+遇到渲染、抠图问题或有想法，请[提 issue](https://github.com/chengyi-ai/retro-topic-cover/issues/new/choose)，渲染问题附成图截图和所用命令。Agent 会自动评估并回复；维护者确认后由 Agent 编码、测试、提 PR，合并前均经人工审查。流程与配置见 [docs/agent-workflow.md](docs/agent-workflow.md)。
+
+修改代码后先运行 `python tools/validate_repo.py` 和 `python -m unittest discover -s tests`。
+
 ## 许可
 
 代码与技能说明采用 [MIT](LICENSE)。字体 Noto Serif SC Black 采用 [SIL OFL](assets/OFL.txt)。示例使用公有领域绘画，来源与许可见 [SOURCES.md](examples/beethoven/SOURCES.md) 及各示例目录的 SOURCES.md。第三方素材不因本仓库的代码许可而改变原有权利；请自行核验新增素材的使用权限。
